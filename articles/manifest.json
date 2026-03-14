@@ -1,0 +1,44 @@
+[
+  {
+    "slug": "understanding-major-arcana",
+    "file": "understanding-major-arcana.md",
+    "title": "Understanding the Major Arcana",
+    "date": "2026-03-10",
+    "excerpt": "A guide to the 22 cards that represent life's spiritual journey and key archetypes."
+  },
+  {
+    "slug": "suit-correspondences",
+    "file": "suit-correspondences.md",
+    "title": "Suit Correspondences - Elements and Meaning",
+    "date": "2026-03-08",
+    "excerpt": "How Wands, Cups, Swords, and Pentacles connect to the four elements and daily life."
+  },
+  {
+    "slug": "numerology-basics",
+    "file": "numerology-basics.md",
+    "title": "Numerology Basics in Tarot",
+    "date": "2026-03-05",
+    "excerpt": "What the numbers one through ten add to each card's meaning across the Minor Arcana."
+  },
+  {
+    "slug": "cleanse-your-deck",
+    "file": "cleanse-your-deck.md",
+    "title": "How to Cleanse Your Tarot Deck",
+    "date": "2026-03-01",
+    "excerpt": "Simple rituals to clear and reconnect with your deck before and after readings."
+  },
+  {
+    "slug": "three-card-spreads",
+    "file": "three-card-spreads.md",
+    "title": "Three-Card Spreads for Daily Guidance",
+    "date": "2026-02-28",
+    "excerpt": "Past, present, and future layouts and how to read them with confidence."
+  },
+  {
+    "slug": "reversed-cards",
+    "file": "reversed-cards.md",
+    "title": "Reversed Cards - When and How to Use Them",
+    "date": "2026-02-25",
+    "excerpt": "Whether to read reversals and what they can add to your interpretations."
+  }
+]

@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DivineWay Tarot — Professional intuitive tarot readings for clarity, guidance, and self-discovery. Book a personal reading today.">
+    <title>DivineWay | Professional Tarot Readings & Spiritual Guidance</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: {} },
+            corePlugins: { preflight: false }
+        };
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    <canvas id="cosmos" aria-hidden="true"></canvas>
+    <div class="cursor" aria-hidden="true">
+        <svg class="cursor-sparkle" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 1l2.2 6.8L21 10l-6.8 2.2L12 19l-2.2-6.8L3 10l6.8-2.2L12 1z" fill="currentColor"/>
+        </svg>
+    </div>
+    <button type="button" id="sound-toggle" class="sound-toggle" aria-label="Play background sound" title="Play / pause ambient sound">
+        <span class="sound-icon sound-icon-off"><i data-lucide="volume2" aria-hidden="true"></i></span>
+        <span class="sound-icon sound-icon-on"><i data-lucide="volume-x" aria-hidden="true"></i></span>
+    </button>
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo">
+                <i data-lucide="moon" class="logo-icon" aria-hidden="true"></i>
+                <span class="logo-text">DivineWay</span>
+            </a>
+            <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+                <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+                <span class="nav-toggle-close" aria-hidden="true">×</span>
+            </button>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="#about">Why DivineWay</a></li>
+                <li><a href="#about-me">About me</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li class="nav-dropdown-wrap">
+                    <button type="button" class="nav-dropdown-trigger" id="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true" aria-controls="nav-dropdown-menu">
+                        More <i data-lucide="chevron-down" class="nav-dropdown-chevron" aria-hidden="true"></i>
+                    </button>
+                    <ul class="nav-dropdown" id="nav-dropdown-menu" role="menu">
+                        <li role="none"><a href="#pricing" role="menuitem">Pricing</a></li>
+                        <li role="none"><a href="#crystals" role="menuitem">Crystals</a></li>
+                        <li role="none"><a href="#testimonials" role="menuitem">Testimonials</a></li>
+                        <li role="none"><a href="#top-questions" role="menuitem">Top questions</a></li>
+                        <li role="none"><a href="#faq" role="menuitem">FAQ</a></li>
+                        <li role="none"><a href="#tarot-news" role="menuitem">Tarot News</a></li>
+                        <li role="none"><a href="#gallery" role="menuitem">Quotes</a></li>
+                        <li role="none"><a href="all-articles.html" role="menuitem">All articles</a></li>
+                        <li role="none"><a href="#" role="menuitem" data-open-tarot-modal>Tarot classes</a></li>
+                        <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#book" class="nav-cta">Book a Reading</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-content container">
+                <p class="hero-label">Intuitive Tarot & Spiritual Guidance</p>
+                <h1 class="hero-title">Find clarity.<br>Trust your path.</h1>
+                <p class="hero-desc">
+                    Receive a reflective three-card reading drawn from the Major Arcana —
+                    your past, present, and future — for insight and direction.
+                </p>
+                <div class="hero-actions">
+                    <a href="#book" class="btn btn-primary">Book your reading</a>
+                </div>
+            </div>
+            <div class="hero-scroll">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <section id="about" class="section section-about fade">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-label">Why DivineWay?</span>
+                    <h2 class="section-title">Guidance rooted in tradition, delivered with care</h2>
+                </div>
+                <div class="about-layout">
+                    <article class="about-card">
+                        <span class="about-card-icon">
+                            <i data-lucide="sparkles" aria-hidden="true"></i>
+                        </span>
+                        <h3 class="about-card-title">Reflective readings</h3>
+                        <p class="about-card-text">Each spread is interpreted with intention — not prediction, but reflection. We use the cards as a mirror for your inner landscape and choices.</p>
+                    </article>
+                    <article class="about-card">
+                        <span class="about-card-icon">
+                            <i data-lucide="layers" aria-hidden="true"></i>
+                        </span>
+                        <h3 class="about-card-title">Major Arcana focus</h3>
+                        <p class="about-card-text">Our readings draw from the 22 Major Arcana, the archetypal journey of the Fool — ideal for life direction, relationships, and meaningful decisions.</p>
+                    </article>
+                    <article class="about-card">
+                        <span class="about-card-icon">
+                            <i data-lucide="shield-check" aria-hidden="true"></i>
+                        </span>
+                        <h3 class="about-card-title">Private & respectful</h3>
+                        <p class="about-card-text">Your reading is confidential and non-judgmental. We create a calm space for you to explore what matters most.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-me" class="section section-about-me fade">
+            <div class="container">
+                <div class="about-me-inner">
+                    <span class="about-me-accent" aria-hidden="true">✦</span>
+                    <h2 class="about-me-title">About me</h2>
+                    <p class="about-me-text">I'm a certified tarot reader with over a decade of practice. I use the cards as a mirror for clarity — not to predict, but to reflect what's already stirring in you. Every reading is private, non-judgmental, and tailored to your question. When you're ready to explore, I'm here.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="section section-how fade">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-label">How It Works</span>
+                    <h2 class="section-title">What happens in a reading</h2>
+                    <p class="section-lead">When you book a session, here's how your tarot reading works.</p>
+                </div>
+                <div class="how-steps">
+                    <div class="how-step">
+                        <span class="how-step-num" aria-hidden="true">01</span>
+                        <div class="how-step-content">
+                            <h3 class="how-step-title">You share your question</h3>
+                            <p>You tell the reader the area you want guidance on — love, career, a decision, or something more general. There are no wrong questions.</p>
+                            <p class="how-step-deliverable">You’ll receive a written summary of your reading; a short voice note can be sent too if you prefer.</p>
+                        </div>
+                        <span class="how-step-icon"><i data-lucide="message-circle" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="how-step">
+                        <span class="how-step-num" aria-hidden="true">02</span>
+                        <div class="how-step-content">
+                            <h3 class="how-step-title">Cards are drawn in a spread</h3>
+                            <p>The reader shuffles the deck and lays cards in a spread (e.g. past, present, future). Each position has a specific meaning in your reading.</p>
+                            <p class="how-step-deliverable">Your reading is delivered as a written summary, with an optional short voice note to walk you through the cards.</p>
+                        </div>
+                        <span class="how-step-icon"><i data-lucide="layers" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="how-step">
+                        <span class="how-step-num" aria-hidden="true">03</span>
+                        <div class="how-step-content">
+                            <h3 class="how-step-title">Interpretation together</h3>
+                            <p>The reader interprets each card in context of your question. You can ask follow-ups and we discuss what comes up.</p>
+                            <p class="how-step-deliverable">You’ll get a written summary plus an optional voice note or live chat on WhatsApp — we agree on the format when you book.</p>
+                        </div>
+                        <span class="how-step-icon"><i data-lucide="book-open" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="section section-pricing fade">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-label">Sessions</span>
+                    <h2 class="section-title">Tarot reading options</h2>
+                    <p class="section-lead">Choose the session that fits your need. All readings are one-on-one, private, and tailored to your question.</p>
+                </div>
+                <div class="pricing-grid">
+                    <article class="pricing-card">
+                        <h3 class="pricing-card-title">Quick insight</h3>
+                        <p class="pricing-card-desc">One focused question, one to two cards. Ideal for a single decision or a yes/no clarity.</p>
+                        <p class="pricing-card-price"><span class="pricing-amount">₹ 500</span> <span class="pricing-per">per session</span></p>
+                        <button type="button" class="btn btn-outline pricing-card-btn btn-open-booking" data-reading-type="Quick insight">Book this</button>
+                    </article>
+                    <article class="pricing-card pricing-card--featured">
+                        <span class="pricing-badge">Popular</span>
+                        <h3 class="pricing-card-title">Three-card reading</h3>
+                        <p class="pricing-card-desc">Past, present, future — the classic spread. Time to explore your question and discuss what comes up.</p>
+                        <p class="pricing-card-price"><span class="pricing-amount">₹ 1,200</span> <span class="pricing-per">per session</span></p>
+                        <button type="button" class="btn btn-primary pricing-card-btn btn-open-booking" data-reading-type="Three-card reading">Book this</button>
+                    </article>
+                    <article class="pricing-card">
+                        <h3 class="pricing-card-title">Extended reading</h3>
+                        <p class="pricing-card-desc">Deeper spread, more cards, and longer time for follow-up questions. Best for big decisions or life themes.</p>
+                        <p class="pricing-card-price"><span class="pricing-amount">₹ 2,000</span> <span class="pricing-per">per session</span></p>
+                        <button type="button" class="btn btn-outline pricing-card-btn btn-open-booking" data-reading-type="Extended reading">Book this</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Crystal interest modal (Tailwind-style popup) -->
+        <div id="crystal-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+            <div class="modal-backdrop" id="modal-backdrop"></div>
+            <div class="modal-box">
+                <button type="button" class="modal-close" id="modal-close" aria-label="Close">×</button>
+                <h2 id="modal-title" class="modal-title">Get notified</h2>
+                <p class="modal-desc">Leave your email and we'll contact you about <strong id="modal-crystal-name">this crystal</strong>.</p>
+                <form id="crystal-form" class="modal-form" method="POST">
+                    <input type="hidden" name="productId" id="form-crystal-id" value="">
+                    <input type="hidden" name="productName" id="form-crystal-name" value="">
+                    <input type="hidden" name="price" id="form-crystal-price" value="">
+                    <div id="crystal-form-errors" class="form-errors" role="alert" hidden></div>
+                    <label for="modal-email" class="modal-label">Email</label>
+                    <input type="email" name="email" id="modal-email" class="modal-input" required placeholder="you@example.com" autocomplete="email" aria-describedby="modal-email-error">
+                    <span class="field-error" id="modal-email-error" aria-live="polite"></span>
+                    <button type="submit" class="btn btn-primary modal-submit">Send</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Book a reading modal (same structure as crystal modal) -->
+        <div id="booking-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title" aria-hidden="true">
+            <div class="modal-backdrop" id="booking-modal-backdrop"></div>
+            <div class="modal-box modal-box--wide">
+                <button type="button" class="modal-close" id="booking-modal-close" aria-label="Close">×</button>
+                <h2 id="booking-modal-title" class="modal-title">Book a personal reading</h2>
+                <p class="modal-desc">Share your details and we'll get in touch to confirm your session.</p>
+                <form id="booking-form" class="modal-form booking-form" method="POST">
+                    <input type="hidden" name="readingType" id="booking-reading-type" value="">
+                    <div id="booking-form-errors" class="form-errors" role="alert" hidden></div>
+                    <div class="booking-field">
+                        <label for="booking-name" class="modal-label">Name</label>
+                        <input type="text" name="name" id="booking-name" class="modal-input" required placeholder="Your name" autocomplete="name" aria-describedby="booking-name-error">
+                        <span class="field-error" id="booking-name-error" aria-live="polite"></span>
+                    </div>
+                    <div class="booking-field">
+                        <label for="booking-email" class="modal-label">Email</label>
+                        <input type="email" name="email" id="booking-email" class="modal-input" required placeholder="you@example.com" autocomplete="email" aria-describedby="booking-email-error">
+                        <span class="field-error" id="booking-email-error" aria-live="polite"></span>
+                    </div>
+                    <div class="booking-row">
+                        <div class="booking-field">
+                            <label for="booking-date" class="modal-label">Preferred date</label>
+                            <input type="date" name="preferredDate" id="booking-date" class="modal-input" aria-label="Preferred date (calendar)">
+                        </div>
+                        <div class="booking-field">
+                            <label for="booking-time" class="modal-label">Preferred time</label>
+                            <input type="time" name="preferredTime" id="booking-time" class="modal-input" aria-label="Preferred time (clock)">
+                        </div>
+                    </div>
+                    <div class="booking-row">
+                        <div class="booking-field">
+                            <label for="booking-state" class="modal-label">State</label>
+                            <select name="state" id="booking-state" class="booking-select modal-input" aria-describedby="booking-state-error" required>
+                                <option value="">Select state</option>
+                            </select>
+                            <span class="field-error" id="booking-state-error" aria-live="polite"></span>
+                        </div>
+                        <div class="booking-field">
+                            <label for="booking-city" class="modal-label">City</label>
+                            <select name="city" id="booking-city" class="booking-select modal-input" aria-describedby="booking-city-error" required disabled>
+                                <option value="">Select city</option>
+                            </select>
+                            <span class="field-error" id="booking-city-error" aria-live="polite"></span>
+                        </div>
+                    </div>
+                    <div class="booking-row">
+                        <div class="booking-field">
+                            <label for="booking-phone" class="modal-label">Phone</label>
+                            <input type="tel" name="phone" id="booking-phone" class="modal-input" required placeholder="+91 or with country code" autocomplete="tel" aria-describedby="booking-phone-error">
+                            <span class="field-error" id="booking-phone-error" aria-live="polite"></span>
+                        </div>
+                        <div class="booking-field">
+                            <label for="booking-age" class="modal-label">Age</label>
+                            <input type="number" name="age" id="booking-age" class="modal-input" min="18" max="120" placeholder="Your age" required aria-describedby="booking-age-error">
+                            <span class="field-error" id="booking-age-error" aria-live="polite"></span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary modal-submit">Submit</button>
+                    <p class="modal-note form-privacy">Your details are confidential and never shared.</p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Error modal (shown when form submit to GAS fails) -->
+        <div id="error-modal" class="modal modal-error" role="alertdialog" aria-modal="true" aria-labelledby="error-modal-title" aria-hidden="true">
+            <div class="modal-backdrop" id="error-modal-backdrop"></div>
+            <div class="modal-box">
+                <button type="button" class="modal-close" id="error-modal-close" aria-label="Close">×</button>
+                <h2 id="error-modal-title" class="modal-title">Something went wrong</h2>
+                <p class="modal-desc">Please try again later. If the problem continues, reach out via WhatsApp or email.</p>
+                <button type="button" class="btn btn-primary" id="error-modal-ok">OK</button>
+            </div>
+        </div>
+
+        <section id="testimonials" class="section section-testimonials fade">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-label">Testimonials</span>
+                    <h2 class="section-title">What others have experienced</h2>
+                    <p class="swiper-hint" aria-hidden="true">Swipe or use the dots below to see more.</p>
+                </div>
+                <div class="swiper testimonials-swiper" aria-label="Testimonials carousel">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <blockquote class="testimonial">
+                                <p>“The reading felt personal and grounded. It didn't tell me what to do — it helped me see my own choices more clearly.”</p>
+                                <cite>— M.</cite>
+                            </blockquote>
+                        </div>
+                        <div class="swiper-slide">
+                            <blockquote class="testimonial">
+                                <p>“I was skeptical at first. The three-card spread and the way it was explained made a lot of sense for where I am in life right now.”</p>
+                                <cite>— R.</cite>
+                            </blockquote>
+                        </div>
+                        <div class="swiper-slide">
+                            <blockquote class="testimonial">
+                                <p>“Calm, thoughtful, and never preachy. Exactly what I needed before a big decision.”</p>
+                                <cite>— K.</cite>
+                            </blockquote>
+                        </div>
+                        <div class="swiper-slide">
+                            <blockquote class="testimonial">
+                                <p>“I've tried several readers. DivineWay's approach felt the most respectful and clear. Will book again.”</p>
+                                <cite>— S.</cite>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section section-faq fade">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-label">Support</span>
+                    <h2 class="section-title">Frequently asked questions</h2>
+                    <p class="section-lead">Quick answers about readings, booking, and what to expect.</p>
+                </div>
+                <div class="faq-list" role="list">
+                    <div class="faq-item" role="listitem">
+                        <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-1" id="faq-q-1">
+                            <span>What happens in a tarot reading?</span>
+                            <i data-lucide="chevron-down" class="faq-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-q-1" hidden>
+                            <p>We use a spread (usually three cards: past, present, future) and interpret the cards in the context of your question or situation. The focus is on reflection and clarity — not prediction. You can ask follow-up questions and we take time to discuss what comes up.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" role="listitem">
+                        <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-2" id="faq-q-2">
+                            <span>How do I book a reading?</span>
+                            <i data-lucide="chevron-down" class="faq-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-q-2" hidden>
+                            <p>Click “Book a Personal Reading” and you’ll be taken to WhatsApp. Send a message to confirm your slot. We’ll agree on a time and format (voice note, call, or chat) that works for you.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" role="listitem">
+                        <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-how-receive" id="faq-q-how-receive">
+                            <span>How will I receive my reading?</span>
+                            <i data-lucide="chevron-down" class="faq-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-how-receive" role="region" aria-labelledby="faq-q-how-receive" hidden>
+                            <p>You'll receive your reading over WhatsApp. We can send it as text, a voice note, or we can do a short video call — we'll agree on what works best for you when you book.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" role="listitem">
+                        <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-3" id="faq-q-3">
+                            <span>Do I need to have a specific question?</span>
+                            <i data-lucide="chevron-down" class="faq-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-q-3" hidden>
+                            <p>It helps to have a theme in mind — love, career, a decision, or general clarity — but you don’t need a single exact question. We can also do an open “what do I need to see right now?” reading.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" role="listitem">
+                        <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-4" id="faq-q-4">
+                            <span>Are readings private and confidential?</span>
+                            <i data-lucide="chevron-down" class="faq-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-q-4" hidden>
+                            <p>Yes. What you share and what comes up in your reading stays between us. We don’t record or share your details with anyone else.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" role="listitem">
+                        <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-5" id="faq-q-5">
+                            <span>What if I’m new to tarot?</span>
+                            <i data-lucide="chevron-down" class="faq-icon" aria-hidden="true"></i>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-q-5" hidden>
+                            <p>You’re welcome. We explain the cards and the spread as we go. Readings are for reflection and insight — no prior experience needed. You can also try the free three-card draw on this site to get a feel for it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="top-questions" class="section section-top-questions fade">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-label">Insights</span>
+                    <h2 class="section-title">Top questions asked</h2>
+                    <p class="section-lead">What people come for — This week and all time.</p>
+                </div>
+                <div class="chart-tabs">
+                    <button type="button" class="chart-tab active" data-range="week" aria-pressed="true">This week</button>
+                    <button type="button" class="chart-tab" data-range="all" aria-pressed="false">All time</button>
+                </div>
+                <div class="chart-wrap">
+                    <div class="chart-bar-row">
+                        <span class="chart-label">Love</span>
+                        <div class="chart-bar-track"><div class="chart-bar" data-category="love" style="width: 0%"></div></div>
+                        <span class="chart-value" data-value="love">0%</span>
+                    </div>
+                    <div class="chart-bar-row">
+                        <span class="chart-label">Career</span>
+                        <div class="chart-bar-track"><div class="chart-bar" data-category="career" style="width: 0%"></div></div>
+                        <span class="chart-value" data-value="career">0%</span>
+                    </div>
+                    <div class="chart-bar-row">
+                        <span class="chart-label">Finances</span>
+                        <div class="chart-bar-track"><div class="chart-bar" data-category="finances" style="width: 0%"></div></div>
+                        <span class="chart-value" data-value="finances">0%</span>
+                    </div>
+                    <div class="chart-bar-row">
+                        <span class="chart-label">Health</span>
+                        <div class="chart-bar-track"><div class="chart-bar" data-category="health" style="width: 0%"></div></div>
+                        <span class="chart-value" data-value="health">0%</span>
+                    </div>
+                    <div class="chart-bar-row">
+                        <span class="chart-label">Study</span>
+                        <div class="chart-bar-track"><div class="chart-bar" data-category="study" style="width: 0%"></div></div>
+                        <span class="chart-value" data-value="study">0%</span>
+                    </div>
+                    <div class="chart-bar-row">
+                        <span class="chart-label">Decision</span>
+                        <div class="chart-bar-track"><div class="chart-bar" data-category="decision" style="width: 0%"></div></div>
+                        <span class="chart-value" data-value="decision">0%</span>
+                    </div>
+                    <div class="chart-bar-row">
+                        <span class="chart-label">Education</span>
+                        <div class="chart-bar-track"><div class="chart-bar" data-category="education" style="width: 0%"></div></div>
+                        <span class="chart-value" data-value="education">0%</span>
+                    </div>
+                    <div class="chart-bar-row">
+                        <span class="chart-label">Other</span>
+                        <div class="chart-bar-track"><div class="chart-bar" data-category="other" style="width: 0%"></div></div>
+                        <span class="chart-value" data-value="other">0%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="section section-gallery fade">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-label">Reflection</span>
+                    <h2 class="section-title">Light for the path</h2>
+                    <p class="section-lead">Words to carry with you — when the way ahead feels unclear.</p>
+                </div>
+                <div class="quotes-gallery">
+                    <blockquote class="quote-card">
+                        <span class="quote-card-accent" aria-hidden="true">✦</span>
+                        <p class="quote-card-text">The answers you seek are already within you. The cards only help you hear them.</p>
+                    </blockquote>
+                    <blockquote class="quote-card">
+                        <span class="quote-card-accent" aria-hidden="true">✦</span>
+                        <p class="quote-card-text">Trust the journey, even when you cannot see the destination.</p>
+                    </blockquote>
+                    <blockquote class="quote-card quote-card--wide">
+                        <span class="quote-card-accent" aria-hidden="true">—</span>
+                        <p class="quote-card-text">Every moment is a chance to choose again. The past does not define the path ahead.</p>
+                    </blockquote>
+                    <blockquote class="quote-card">
+                        <span class="quote-card-accent" aria-hidden="true">✦</span>
+                        <p class="quote-card-text">Clarity comes not from knowing everything, but from being willing to ask.</p>
+                    </blockquote>
+                    <blockquote class="quote-card">
+                        <span class="quote-card-accent" aria-hidden="true">✦</span>
+                        <p class="quote-card-text">Your intuition is not a whisper — it is the part of you that already knows.</p>
+                    </blockquote>
+                    <blockquote class="quote-card quote-card--wide">
+                        <span class="quote-card-accent" aria-hidden="true">—</span>
+                        <p class="quote-card-text">The cards reflect what is already stirring in your heart. Honour that.</p>
+                    </blockquote>
+                    <blockquote class="quote-card">
+                        <span class="quote-card-accent" aria-hidden="true">✦</span>
+                        <p class="quote-card-text">You are not lost. You are in the process of finding.</p>
+                    </blockquote>
+                    <blockquote class="quote-card">
+                        <span class="quote-card-accent" aria-hidden="true">✦</span>
+                        <p class="quote-card-text">The best reading is the one that leaves you feeling seen, not told.</p>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <section id="tarot-news" class="section section-tarot-news fade">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-label">Blog</span>
+                    <h2 class="section-title">Tarot News and Resources</h2>
+                    <p class="section-lead">Latest featured articles from our blog.</p>
+                </div>
+                <div class="featured-articles" id="featured-articles">
+                    <!-- Filled by JS: 3 featured cards -->
+                </div>
+                <div class="section-actions">
+                    <a href="all-articles.html" class="btn btn-outline">Read all articles</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="crystals" class="section section-crystals fade">
+            <div class="container">
+                <div class="section-head">
+                    <span class="section-label">Crystals</span>
+                    <h2 class="section-title">Sacred stones & crystals</h2>
+                    <p class="section-lead">Leave your email for the crystal you're interested in. We'll get in touch with availability and details.</p>
+                </div>
+                <div class="swiper crystals-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article class="crystal-card" data-crystal-id="amethyst" data-crystal-name="Amethyst">
+                                <div class="crystal-image">
+                                    <span class="crystal-placeholder"><i data-lucide="gem" aria-hidden="true"></i></span>
+                                </div>
+                                <div class="crystal-head">
+                                    <h3 class="crystal-name">Amethyst</h3>
+                                    <span class="crystal-badge">Popular</span>
+                                </div>
+                                <p class="crystal-desc">Clarity, calm, intuition.</p>
+                                <div class="crystal-footer">
+                                    <span class="crystal-price">₹ 1,200</span>
+                                    <button type="button" class="btn btn-outline btn-crystal-interest" aria-label="Get notified for Amethyst">I'm interested</button>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article class="crystal-card" data-crystal-id="rose-quartz" data-crystal-name="Rose Quartz">
+                                <div class="crystal-image">
+                                    <span class="crystal-placeholder"><i data-lucide="gem" aria-hidden="true"></i></span>
+                                </div>
+                                <div class="crystal-head">
+                                    <h3 class="crystal-name">Rose Quartz</h3>
+                                    <span class="crystal-badge">Latest</span>
+                                </div>
+                                <p class="crystal-desc">Love, compassion, heart healing.</p>
+                                <div class="crystal-footer">
+                                    <span class="crystal-price">₹ 950</span>
+                                    <button type="button" class="btn btn-outline btn-crystal-interest" aria-label="Get notified for Rose Quartz">I'm interested</button>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article class="crystal-card" data-crystal-id="clear-quartz" data-crystal-name="Clear Quartz">
+                                <div class="crystal-image">
+                                    <span class="crystal-placeholder"><i data-lucide="gem" aria-hidden="true"></i></span>
+                                </div>
+                                <div class="crystal-head">
+                                    <h3 class="crystal-name">Clear Quartz</h3>
+                                    <span class="crystal-badge">Bestseller</span>
+                                </div>
+                                <p class="crystal-desc">Amplification, focus, energy.</p>
+                                <div class="crystal-footer">
+                                    <span class="crystal-price">₹ 800</span>
+                                    <button type="button" class="btn btn-outline btn-crystal-interest" aria-label="Get notified for Clear Quartz">I'm interested</button>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article class="crystal-card" data-crystal-id="black-tourmaline" data-crystal-name="Black Tourmaline">
+                                <div class="crystal-image">
+                                    <span class="crystal-placeholder"><i data-lucide="gem" aria-hidden="true"></i></span>
+                                </div>
+                                <div class="crystal-head">
+                                    <h3 class="crystal-name">Black Tourmaline</h3>
+                                </div>
+                                <p class="crystal-desc">Protection, grounding.</p>
+                                <div class="crystal-footer">
+                                    <span class="crystal-price">₹ 1,100</span>
+                                    <button type="button" class="btn btn-outline btn-crystal-interest" aria-label="Get notified for Black Tourmaline">I'm interested</button>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article class="crystal-card" data-crystal-id="lapis-lazuli" data-crystal-name="Lapis Lazuli">
+                                <div class="crystal-image">
+                                    <span class="crystal-placeholder"><i data-lucide="gem" aria-hidden="true"></i></span>
+                                </div>
+                                <div class="crystal-head">
+                                    <h3 class="crystal-name">Lapis Lazuli</h3>
+                                    <span class="crystal-badge">New</span>
+                                </div>
+                                <p class="crystal-desc">Wisdom, truth, inner sight.</p>
+                                <div class="crystal-footer">
+                                    <span class="crystal-price">₹ 1,450</span>
+                                    <button type="button" class="btn btn-outline btn-crystal-interest" aria-label="Get notified for Lapis Lazuli">I'm interested</button>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide">
+                            <article class="crystal-card" data-crystal-id="citrine" data-crystal-name="Citrine">
+                                <div class="crystal-image">
+                                    <span class="crystal-placeholder"><i data-lucide="gem" aria-hidden="true"></i></span>
+                                </div>
+                                <div class="crystal-head">
+                                    <h3 class="crystal-name">Citrine</h3>
+                                </div>
+                                <p class="crystal-desc">Abundance, joy, manifestation.</p>
+                                <div class="crystal-footer">
+                                    <span class="crystal-price">₹ 1,050</span>
+                                    <button type="button" class="btn btn-outline btn-crystal-interest" aria-label="Get notified for Citrine">I'm interested</button>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination crystals-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="book" class="section section-book fade">
+            <div class="container section-book-inner">
+                <div class="section-head">
+                    <span class="section-label">Book a Reading</span>
+                    <h2 class="section-title">One-on-one sessions</h2>
+                    <p class="section-lead">For a deeper, personalized reading — with time for your questions and follow-up — book a private session via WhatsApp.</p>
+                    <p class="book-privacy">Your question and details are confidential and never shared.</p>
+                </div>
+                <div class="section-book-actions">
+                    <button type="button" class="btn btn-primary btn-book" id="btn-open-booking" data-reading-type="">
+                        <i data-lucide="message-circle" aria-hidden="true"></i>
+                        Book a Personal Reading
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tarot classes / learning (modal, opens after 20s or via link) -->
+        <div id="tarot-classes-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="tarot-classes-modal-title" aria-hidden="true">
+            <div class="modal-backdrop" id="tarot-classes-modal-backdrop"></div>
+            <div class="modal-box modal-box--wide">
+                <button type="button" class="modal-close" id="tarot-classes-modal-close" aria-label="Close"><i data-lucide="x" aria-hidden="true"></i></button>
+                <div class="tarot-classes-modal-inner">
+                    <span class="section-label">Learn with us</span>
+                    <h2 id="tarot-classes-modal-title" class="modal-title">Tarot classes</h2>
+                    <p class="modal-desc">DivineWay brings the ancient practice of tarot into your daily life. We offer structured learning that can include:</p>
+                    <ul class="tarot-classes-list tarot-classes-modal-list">
+                        <li><span class="tarot-classes-icon">✨</span> Keywords for every card</li>
+                        <li><span class="tarot-classes-icon">✨</span> Suit correspondences</li>
+                        <li><span class="tarot-classes-icon">✨</span> Numerology basics</li>
+                    </ul>
+                    <p class="tarot-classes-cta">For details, pricing, and availability, get in touch. We’ll be happy to tell you more.</p>
+                    <div class="tarot-classes-modal-actions">
+                        <a href="contact.html" class="btn btn-primary">Contact us</a>
+                        <a href="#book" class="btn btn-outline tarot-classes-close-on-click">Book a reading</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <i data-lucide="moon" class="logo-icon" aria-hidden="true"></i>
+                <span class="logo-text">DivineWay</span>
+            </div>
+            <p class="footer-tagline">Tarot guidance for clarity and self-reflection.</p>
+            <p class="footer-disclaimer">Readings are for entertainment and reflection only. They do not replace professional advice.</p>
+            <p class="footer-footer-links">
+                <a href="#" data-open-tarot-modal>Tarot classes</a>
+                <span aria-hidden="true"> · </span>
+                <a href="#pricing">Pricing</a>
+                <span aria-hidden="true"> · </span>
+                <a href="contact.html">Contact us</a>
+            </p>
+            <p class="footer-copy">© 2026 DivineWay. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="#" id="whatsapp-float" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" data-phone="91XXXXXXXXXX">
+        <svg class="whatsapp-float-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
